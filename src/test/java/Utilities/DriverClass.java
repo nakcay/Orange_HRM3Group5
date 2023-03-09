@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -17,13 +18,12 @@ public class DriverClass {
     public void startingSettings() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
     }
 
     @AfterClass
-    public void finishSettings(){
+    public void finishSettings() {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -31,6 +31,4 @@ public class DriverClass {
         }
         driver.quit();
     }
-
-
 }
