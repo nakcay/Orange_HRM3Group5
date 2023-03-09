@@ -17,13 +17,13 @@ public class DriverClass {
     public void startingSettings() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
     }
 
     @AfterClass
-    public void finishSettings(){
+    public void finishSettings() {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -31,6 +31,7 @@ public class DriverClass {
         }
         driver.quit();
     }
-
-
 }
+
+
+
